@@ -25,7 +25,7 @@ async fn handler(req: Request) -> Result<Response<Body>, Error> {
 
     // This converts the incoming Vercel request into a format Axum can understand
     // and then calls the correct route handler.
-    Ok(axum_aws_lambda::axum_to_lambda(app, req).await)
+    Ok(axum_aws_lambda::run_with_lambda_event(app, req).await)
 }
 
 

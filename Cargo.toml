@@ -8,7 +8,7 @@ axum = "0.7"
 tokio = { version = "1", features = ["macros"] }
 serde_json = "1.0"
 # This is the Vercel adapter for Axum
-axum-aws-lambda = "0.3"
+axum-aws-lambda = { version = "0.3", features = ["http-v2"] }
 # This is the core Vercel runtime for Rust
 vercel_runtime = "1.1"
 
