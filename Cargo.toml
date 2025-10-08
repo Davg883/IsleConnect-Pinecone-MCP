@@ -4,13 +4,25 @@ version = "0.1.0"
 edition = "2021"
 
 [dependencies]
+# Core web framework
 axum = "0.7"
-tokio = { version = "1", features = ["macros"] }
-serde_json = "1.0"
-# This is the Vercel adapter for Axum
-axum-aws-lambda = { version = "0.3", features = ["http-v1"] }
-# This is the core Vercel runtime for Rust
+
+# The core vercel runtime for Rust
 vercel_runtime = "1.1"
+
+# Tokio for async runtime
+tokio = { version = "1", features = ["macros"] }
+
+# For handling JSON
+serde_json = "1.0"
+
+# Tower is a library of components for building robust network services.
+# It's a dependency of Axum and is needed for the `oneshot` call.
+tower = "0.4"
+
+# This is a general-purpose library for working with HTTP types.
+http = "1.1"
+
 
 [[bin]]
 name = "index"
